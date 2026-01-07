@@ -4,6 +4,7 @@
 
     <!-- Camera permission for taking photos/videos of pet reactions -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     
     <!-- Required for camera to work -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />
@@ -58,6 +59,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawPanic" />
 
         <!-- FileProvider for sharing photos/videos -->
         <provider

@@ -7,26 +7,27 @@ import kotlin.math.sin
 
 /**
  * Generates pure sine wave tones at specified frequencies.
- * Lightweight implementation that doesn't store any data.
+ * Singleton - shared between activities so sound keeps playing.
  */
-class FrequencyGenerator {
+object FrequencyGenerator {
 
     private var audioTrack: AudioTrack? = null
     private var isPlaying = false
     private var playbackThread: Thread? = null
+    private var currentFrequency: Int = 0
 
-    companion object {
-        private const val SAMPLE_RATE = 44100
-        private const val AMPLITUDE = 0.8 // 80% volume to be safe for pets
-    }
+    private const val SAMPLE_RATE = 44100
+    private const val AMPLITUDE = 0.8
 
     /**
      * Start playing a tone at the specified frequency.
-     * @param frequencyHz The frequency in Hertz (1000-22000 recommended)
      */
     fun play(frequencyHz: Int) {
-        stop() // Stop any existing playback
-
+        if (isPlaying && frequencyHz == currentFrequency) return
+        
+        stop()
+        
+        currentFrequency = frequencyHz
         isPlaying = true
 
         playbackThread = Thread {
@@ -107,7 +108,12 @@ class FrequencyGenerator {
     fun isPlaying(): Boolean = isPlaying
 
     /**
-     * Release all resources. Call this when done with the generator.
+     * Get current frequency.
+     */
+    fun getCurrentFrequency(): Int = currentFrequency
+
+    /**
+     * Release all resources.
      */
     fun release() {
         stop()
