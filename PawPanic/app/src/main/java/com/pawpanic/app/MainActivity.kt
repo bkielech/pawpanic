@@ -197,10 +197,22 @@ class MainActivity : AppCompatActivity() {
         binding.adViewBanner.pause()
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.adViewBanner.resume()
-    }
+	override fun onResume() {
+		super.onResume()
+		binding.adViewBanner.resume()
+		
+		// Aktualizuj UI przycisków na podstawie stanu dźwięku
+		if (FrequencyGenerator.isPlaying()) {
+			binding.btnPlay.isEnabled = false
+			binding.btnStop.isEnabled = true
+			binding.tvSoundStatus.visibility = View.VISIBLE
+			binding.tvSoundStatus.text = getString(R.string.warning_volume, FrequencyGenerator.getCurrentFrequency())
+		} else {
+			binding.btnPlay.isEnabled = true
+			binding.btnStop.isEnabled = false
+			binding.tvSoundStatus.visibility = View.GONE
+		}
+	}
 
     override fun onDestroy() {
         super.onDestroy()
