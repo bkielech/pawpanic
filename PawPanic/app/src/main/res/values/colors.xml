@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme colors -->
+    <color name="background_primary">#121212</color>
+    <color name="background_secondary">#1E1E1E</color>
+    <color name="background_card">#252525</color>
+    
+    <!-- Accent colors - vibrant purple/blue for pet fun theme -->
+    <color name="accent_primary">#BB86FC</color>
+    <color name="accent_secondary">#03DAC6</color>
+    <color name="accent_tertiary">#CF6679</color>
+    
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="text_hint">#757575</color>
+    
+    <!-- Button colors -->
+    <color name="button_play">#4CAF50</color>
+    <color name="button_stop">#F44336</color>
+    <color name="button_camera">#2196F3</color>
+    
+    <!-- Slider colors -->
+    <color name="slider_track">#3D3D3D</color>
+    <color name="slider_thumb">#BB86FC</color>
+    <color name="slider_active">#BB86FC</color>
+    
+    <!-- Preset chip colors -->
+    <color name="chip_background">#2D2D2D</color>
+    <color name="chip_selected">#BB86FC</color>
+    
+    <!-- Status bar -->
+    <color name="status_bar">#000000</color>
+</resources>

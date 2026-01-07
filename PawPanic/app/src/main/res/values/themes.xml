@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PawPanic" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorPrimaryVariant">@color/accent_secondary</item>
+        <item name="colorOnPrimary">@color/background_primary</item>
+        
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/accent_secondary</item>
+        <item name="colorSecondaryVariant">@color/accent_tertiary</item>
+        <item name="colorOnSecondary">@color/background_primary</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_primary</item>
+        <item name="colorSurface">@color/background_secondary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:navigationBarColor">@color/background_primary</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+    
+    <!-- Play button style -->
+    <style name="PlayButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/button_play</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <!-- Stop button style -->
+    <style name="StopButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/button_stop</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    
+    <!-- Camera button style -->
+    <style name="CameraButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/button_camera</item>
+        <item name="android:textColor">@color/button_camera</item>
+    </style>
+    
+    <!-- Preset chip style -->
+    <style name="PresetChip" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="chipStrokeColor">@color/accent_primary</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+</resources>

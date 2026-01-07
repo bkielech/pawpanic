@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    android:padding="@dimen/margin_medium"
+    tools:context=".MainActivity">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/text_title"
+        android:textColor="@color/accent_primary"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_tagline"
+        android:textSize="@dimen/text_label"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Frequency Display Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFrequency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        app:cardBackgroundColor="@color/background_card"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTagline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_large"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvFrequencyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/frequency_label"
+                android:textSize="@dimen/text_label"
+                android:textColor="@color/text_secondary"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/tvFrequencyValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_frequency"
+                android:textColor="@color/accent_primary"
+                android:fontFamily="sans-serif-medium"
+                tools:text="15,000 Hz" />
+
+            <!-- Frequency Slider -->
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderFrequency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:valueFrom="1000"
+                android:valueTo="22000"
+                android:value="15000"
+                android:stepSize="100"
+                app:thumbColor="@color/slider_thumb"
+                app:trackColorActive="@color/slider_active"
+                app:trackColorInactive="@color/slider_track"
+                app:haloColor="@color/accent_primary" />
+
+            <TextView
+                android:id="@+id/tvHumanRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info_human_range"
+                android:textSize="12sp"
+                android:textColor="@color/text_hint" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Preset Frequency Chips -->
+    <HorizontalScrollView
+        android:id="@+id/scrollPresets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/cardFrequency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupPresets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDog"
+                style="@style/PresetChip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chip_height"
+                android:text="@string/preset_dog" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCat"
+                style="@style/PresetChip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chip_height"
+                android:text="@string/preset_cat" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMouse"
+                style="@style/PresetChip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chip_height"
+                android:text="@string/preset_mouse" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBird"
+                style="@style/PresetChip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chip_height"
+                android:text="@string/preset_bird" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMax"
+                style="@style/PresetChip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chip_height"
+                android:text="@string/preset_max" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Play/Stop Buttons -->
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/scrollPresets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlay"
+            style="@style/PlayButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:text="@string/btn_play"
+            app:cornerRadius="@dimen/corner_radius_medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStop"
+            style="@style/StopButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/margin_small"
+            android:text="@string/btn_stop"
+            android:enabled="false"
+            app:cornerRadius="@dimen/corner_radius_medium" />
+
+    </LinearLayout>
+
+    <!-- Sound Playing Indicator -->
+    <TextView
+        android:id="@+id/tvSoundStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textColor="@color/accent_secondary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="🔊 Sound is playing at 15,000 Hz"
+        tools:visibility="visible" />
+
+    <!-- Camera Buttons Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardCamera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        app:cardBackgroundColor="@color/background_card"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSoundStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capture the moment!"
+                android:textSize="@dimen/text_label"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPhoto"
+                    style="@style/CameraButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="@string/btn_photo"
+                    app:cornerRadius="@dimen/corner_radius_medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVideo"
+                    style="@style/CameraButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:text="@string/btn_video"
+                    app:cornerRadius="@dimen/corner_radius_medium" />
+
+            </LinearLayout>
+
+            <!-- Hashtag display -->
+            <TextView
+                android:id="@+id/tvHashtag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/share_hashtag"
+                android:textSize="14sp"
+                android:textColor="@color/accent_primary"
+                android:fontFamily="sans-serif-medium" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Safety Info -->
+    <TextView
+        android:id="@+id/tvSafety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info_safety"
+        android:textSize="12sp"
+        android:textColor="@color/text_hint"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/cardCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 
+    ============================================================
+    ADMOB BANNER AD PLACEMENT
+    ============================================================
+    
+    This is where the banner ad will appear.
+    Current ad unit ID is Google's TEST banner ID - safe for development.
+    
+    BEFORE PUBLISHING: Replace ads:adUnitId with your real Ad Unit ID
+    Format: ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY
+    
+    The banner is placed at the bottom of the screen following 
+    Google's best practices for ad placement.
+    ============================================================
+    -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

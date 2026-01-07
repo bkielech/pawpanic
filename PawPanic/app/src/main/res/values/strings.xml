@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PawPanic</string>
+    <string name="app_tagline">Watch your pet\'s hilarious reactions! 🐾</string>
+    
+    <!-- Frequency display -->
+    <string name="frequency_label">Frequency</string>
+    <string name="frequency_format">%,d Hz</string>
+    <string name="frequency_hint">Slide to adjust frequency</string>
+    
+    <!-- Preset buttons -->
+    <string name="preset_dog">🐕 Dog Range</string>
+    <string name="preset_cat">🐱 Cat Range</string>
+    <string name="preset_mouse">🐭 Rodent Range</string>
+    <string name="preset_bird">🐦 Bird Range</string>
+    <string name="preset_max">🔊 Ultra High</string>
+    
+    <!-- Control buttons -->
+    <string name="btn_play">▶ PLAY</string>
+    <string name="btn_stop">⏹ STOP</string>
+    <string name="btn_photo">📷 Capture Reaction</string>
+    <string name="btn_video">🎬 Record Video</string>
+    
+    <!-- Social sharing -->
+    <string name="share_hashtag">#PawPanic</string>
+    <string name="share_caption">Check out my pet\'s hilarious reaction! 🐾😂 #PawPanic #PetReaction #FunnyPets #PetLife</string>
+    <string name="share_title">Share your pet\'s reaction</string>
+    
+    <!-- Info text -->
+    <string name="info_human_range">Human hearing: up to ~20,000 Hz</string>
+    <string name="info_safety">🛡️ Safe for pets - uses gentle frequencies</string>
+    
+    <!-- GDPR Consent -->
+    <string name="consent_title">Welcome to PawPanic!</string>
+    <string name="consent_message">We use ads to keep this app free. By continuing, you agree to personalized ads based on your interests. You can change this anytime in settings.\n\nWe respect your privacy and don\'t store any personal data.</string>
+    <string name="consent_agree">I Agree</string>
+    <string name="consent_decline">Use Non-Personalized Ads</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera_title">Camera Permission Needed</string>
+    <string name="permission_camera_message">To capture your pet\'s reaction, we need camera access. No photos are stored - they go directly to share.</string>
+    <string name="permission_grant">Grant Permission</string>
+    <string name="permission_cancel">Cancel</string>
+    
+    <!-- Warnings -->
+    <string name="warning_volume">🔊 Sound is playing at %,d Hz</string>
+    <string name="warning_high_freq">⚠️ Very high frequency - may not be audible to humans</string>
+</resources>
